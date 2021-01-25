@@ -10,8 +10,8 @@ module "asg" {
   instance_type = "t2.micro"
 
   min_size           = 1
-  max_size           = 1
-  enable_autoscaling = false
+  max_size           = 2
+  enable_autoscaling = false   
 
   subnet_ids = data.aws_subnet_ids.default.ids
 }
@@ -23,3 +23,5 @@ data "aws_vpc" "default" {
 data "aws_subnet_ids" "default" {
   vpc_id = data.aws_vpc.default.id
 }
+
+
